@@ -24,6 +24,7 @@ class DashShooterPlayerComponent extends SpriteAnimationComponent
         onTick: _newBulletComponent,
       ),
     );
+    priority = 1;
     animation = await gameRef.loadSpriteAnimation(
       'player.png',
       SpriteAnimationData.sequenced(

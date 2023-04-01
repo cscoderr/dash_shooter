@@ -5,10 +5,9 @@ import 'package:flame/components.dart';
 
 class DashTimerComponent extends TimerComponent
     with HasGameRef<DashShooterGame> {
-  final Random random = Random();
-  final _halfWidth = 30 / 2;
+  DashTimerComponent() : super(period: 1.5, repeat: true);
 
-  DashTimerComponent() : super(period: 1, repeat: true);
+  final Random random = Random();
 
   @override
   void onTick() {
@@ -17,8 +16,8 @@ class DashTimerComponent extends TimerComponent
         gameRef.level * 2,
         (index) => DashEnemyComponent(
           position: Vector2(
-            _halfWidth + (gameRef.size.x - _halfWidth) * random.nextDouble(),
-            200,
+            (gameRef.size.x - 30) * random.nextDouble(),
+            (gameRef.size.y / 2) * random.nextDouble(),
           ),
         ),
       ),
