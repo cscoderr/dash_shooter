@@ -3,8 +3,8 @@ import 'package:flame/components.dart';
 import 'package:flame/parallax.dart';
 import 'package:flutter/material.dart';
 
-class Background extends ParallaxComponent<DashShooterGame> {
-  Background() : super();
+class BackgroundComponent extends ParallaxComponent<DashShooterGame> {
+  BackgroundComponent() : super();
 
   @override
   Future<void> onLoad() async {

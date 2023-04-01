@@ -15,7 +15,7 @@ class DashTimerComponent extends TimerComponent
     gameRef.addAll(
       List.generate(
         gameRef.level * 2,
-        (index) => Dash(
+        (index) => DashEnemyComponent(
           position: Vector2(
             _halfWidth + (gameRef.size.x - _halfWidth) * random.nextDouble(),
             200,

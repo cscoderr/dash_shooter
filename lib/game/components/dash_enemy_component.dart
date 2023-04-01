@@ -3,8 +3,9 @@ import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame_audio/flame_audio.dart';
 
-class Dash extends SpriteAnimationComponent with HasGameRef<DashShooterGame> {
-  Dash({required super.position});
+class DashEnemyComponent extends SpriteAnimationComponent
+    with HasGameRef<DashShooterGame> {
+  DashEnemyComponent({required super.position});
 
   final Vector2 velocity = Vector2.zero();
 
@@ -36,7 +37,7 @@ class Dash extends SpriteAnimationComponent with HasGameRef<DashShooterGame> {
     removeFromParent();
     gameRef.increaseScore();
     gameRef.shotSound();
-    if (gameRef.score % 100 == 0) {
+    if (gameRef.score % 50 == 0) {
       gameRef.increaseLevel();
     }
   }

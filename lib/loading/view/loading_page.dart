@@ -12,7 +12,7 @@ class _LoadingPageState extends State<LoadingPage> {
   @override
   void initState() {
     super.initState();
-    Future<void>.delayed(const Duration(milliseconds: 300), () {
+    Future<void>.delayed(const Duration(milliseconds: 1000), () {
       Navigator.of(context).pushReplacement(GamePage.route());
     });
   }
@@ -64,7 +64,7 @@ class DashProgressIndicator extends StatelessWidget {
             padding: const EdgeInsets.all(2),
             child: TweenAnimationBuilder(
                 tween: Tween<double>(begin: 0, end: progress),
-                duration: const Duration(milliseconds: 500),
+                duration: const Duration(milliseconds: 1000),
                 builder: (BuildContext context, double progress, _) {
                   return FractionallySizedBox(
                     alignment: Alignment.centerLeft,

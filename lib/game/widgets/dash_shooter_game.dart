@@ -10,16 +10,16 @@ import 'package:flame_audio/flame_audio.dart';
 
 class DashShooterGame extends FlameGame
     with PanDetector, HasCollisionDetection {
-  late DashShooterPlayer player;
+  late DashShooterPlayerComponent player;
   late final TextComponent scoreText;
   late final TextComponent levelText;
   int score = 0;
   int level = 1;
   @override
   FutureOr<void> onLoad() async {
-    player = DashShooterPlayer();
+    player = DashShooterPlayerComponent();
     addAll([
-      Background(),
+      BackgroundComponent(),
       scoreText = TextComponent(
         position: Vector2(size.x - 10, 50),
         anchor: Anchor.topRight,
@@ -44,7 +44,7 @@ class DashShooterGame extends FlameGame
       DashTimerComponent(),
     ]);
     startBgmMusic();
-    player.beginFire();
+    player.startShooting();
   }
 
   @override

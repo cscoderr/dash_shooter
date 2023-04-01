@@ -2,9 +2,9 @@ import 'package:dash_shooter/game/game.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 
-class Bullet extends SpriteAnimationComponent
+class BulletComponent extends SpriteAnimationComponent
     with HasGameRef<DashShooterGame>, CollisionCallbacks {
-  Bullet({
+  BulletComponent({
     required Vector2 position,
   }) : super(
           position: position,
@@ -35,7 +35,7 @@ class Bullet extends SpriteAnimationComponent
   @override
   void onCollisionStart(Set<Vector2> points, PositionComponent other) {
     super.onCollisionStart(points, other);
-    if (other is Dash) {
+    if (other is DashEnemyComponent) {
       removeFromParent();
       other.collide();
     }
