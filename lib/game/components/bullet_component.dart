@@ -49,7 +49,7 @@ class BulletComponent extends SpriteAnimationComponent
       ..scale(dt);
     position += deltaPosition;
 
-    if (position.y < 50 ||
+    if (position.y < 0 ||
         position.x > gameRef.size.x ||
         position.x + size.x < 0) {
       removeFromParent();

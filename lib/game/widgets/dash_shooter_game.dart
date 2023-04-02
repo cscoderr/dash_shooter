@@ -17,6 +17,7 @@ class DashShooterGame extends FlameGame
   int level = 1;
   @override
   FutureOr<void> onLoad() async {
+    FlameAudio.bgm.initialize();
     player = DashShooterPlayerComponent();
     addAll([
       BackgroundComponent(),
@@ -55,7 +56,6 @@ class DashShooterGame extends FlameGame
   }
 
   void startBgmMusic() {
-    FlameAudio.bgm.initialize();
     FlameAudio.bgm.play('background.mp3', volume: 0.25);
   }
 
