@@ -56,6 +56,7 @@ class DashShooterGame extends FlameGame
   }
 
   void startBgmMusic() {
+    FlameAudio.bgm.stop();
     FlameAudio.bgm.play('background.mp3', volume: 0.25);
   }
 

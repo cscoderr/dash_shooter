@@ -1,4 +1,4 @@
-import 'package:dash_shooter/game/game.dart';
+import 'package:dash_shooter/main/main.dart';
 import 'package:flutter/material.dart';
 
 class LoadingPage extends StatefulWidget {
@@ -13,7 +13,10 @@ class _LoadingPageState extends State<LoadingPage> {
   void initState() {
     super.initState();
     Future<void>.delayed(const Duration(milliseconds: 1000), () {
-      Navigator.of(context).pushReplacement(GamePage.route());
+      if (!mounted) {
+        return;
+      }
+      Navigator.of(context).pushReplacement(MainPage.route());
     });
   }
 
@@ -28,7 +31,7 @@ class _LoadingPageState extends State<LoadingPage> {
             Text(
               'Dash Shooter',
               style: primaryTextTheme.headlineMedium!.copyWith(
-                color: const Color(0xFF2A48DF),
+                color: const Color(0xFF425084),
                 fontWeight: FontWeight.w900,
               ),
             ),
@@ -59,7 +62,7 @@ class DashProgressIndicator extends StatelessWidget {
         height: 16,
         width: 200,
         child: ColoredBox(
-          color: const Color(0xFF2A48DF),
+          color: const Color(0xFF425084),
           child: Padding(
             padding: const EdgeInsets.all(2),
             child: TweenAnimationBuilder(

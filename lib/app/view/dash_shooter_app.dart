@@ -11,15 +11,15 @@ class DashShooterApp extends StatelessWidget {
       title: 'Dash Shooter',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: const Color(0xFF2A48DF),
-        appBarTheme: const AppBarTheme(color: Color(0xFF2A48DF)),
+        primaryColor: const Color(0xFF425084),
+        appBarTheme: const AppBarTheme(color: Color(0xFF425084)),
         colorScheme: ColorScheme.fromSwatch(
-          accentColor: const Color(0xFF2A48DF),
+          accentColor: const Color(0xFF425084),
         ),
         scaffoldBackgroundColor: const Color(0xFFFFFFFF),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(const Color(0xFF2A48DF)),
+            backgroundColor: MaterialStateProperty.all(const Color(0xFF425084)),
           ),
         ),
         textTheme: GoogleFonts.poppinsTextTheme(),
